@@ -1,11 +1,10 @@
-import './style.scss'
-import { t } from 'i18next'
-import { Trans } from 'react-i18next'
-import Autocomplete from '@mui/material/Autocomplete'
-import TextField from '@mui/material/TextField'
+import './style.scss';
+import { t } from 'i18next';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
-type ComboObjectOption = { title: string; value: string }
-type ComboPlainOption = string
+type ComboObjectOption = { title: string; value: string };
+type ComboPlainOption = string;
 
 export enum COMBO_BOX_DICTIONARY {
   FA = 'fa_dictionary',
@@ -14,20 +13,20 @@ export enum COMBO_BOX_DICTIONARY {
 }
 
 interface IComboBox {
-  id: string
-  value?: ComboObjectOption | null
-  plainValue?: ComboPlainOption | null
-  onChange: any
-  options?: Array<ComboObjectOption>
-  plainOptions?: Array<ComboPlainOption>
-  placeholder: string
-  inputValue?: string
-  onInputChange?: () => void
-  label: string
-  className?: string
-  dictionary?: COMBO_BOX_DICTIONARY
-  style?: any
-  freeSolo?: boolean
+  id: string;
+  value?: ComboObjectOption | null;
+  plainValue?: ComboPlainOption | null;
+  onChange: any;
+  options?: Array<ComboObjectOption>;
+  plainOptions?: Array<ComboPlainOption>;
+  placeholder: string;
+  inputValue?: string;
+  onInputChange?: () => void;
+  label: string;
+  className?: string;
+  dictionary?: COMBO_BOX_DICTIONARY;
+  style?: any;
+  freeSolo?: boolean;
 }
 
 const ComboBox = (props: IComboBox) => {
@@ -43,18 +42,19 @@ const ComboBox = (props: IComboBox) => {
     placeholder,
     label,
     className,
-    dictionary,
     style,
     freeSolo = false,
-  } = props
+  } = props;
 
   return (
     <div
-      className={`bdm-custom-mui-autocomplete ${className ? className : ''}`.trim()}
+      className={`bdm-custom-mui-autocomplete ${
+        className ? className : ''
+      }`.trim()}
       style={style ? { ...style } : null}
     >
-      <label htmlFor={id} className='bdm-custom-mui-autocomplete__label'>
-        <Trans i18nKey={label} />
+      <label htmlFor={id} className="bdm-custom-mui-autocomplete__label">
+        {t(label)}
       </label>
 
       {options && (
@@ -62,11 +62,11 @@ const ComboBox = (props: IComboBox) => {
           // dir='ltr'
           disablePortal
           id={id}
-          className='bdm-custom-mui-autocomplete__input'
+          className="bdm-custom-mui-autocomplete__input"
           ListboxProps={{ style: { overflow: 'hidden' } }}
-          getOptionLabel={opt => {
-            const title = typeof opt === 'string' ? opt : opt.title
-            return dictionary ? window?.[dictionary]?.[title] || title : title
+          getOptionLabel={(opt) => {
+            const title = typeof opt === 'string' ? opt : opt.title;
+            return title;
           }}
           value={value}
           onChange={onChange}
@@ -76,14 +76,14 @@ const ComboBox = (props: IComboBox) => {
           // open
           inputValue={inputValue}
           onInputChange={onInputChange}
-          renderInput={param => {
+          renderInput={(param) => {
             return (
               <TextField
-                className='bdm-custom-mui-autocomplete__input__input'
+                className="bdm-custom-mui-autocomplete__input__input"
                 {...param}
                 placeholder={t(placeholder)}
               />
-            )
+            );
           }}
           isOptionEqualToValue={(option, value) => option.title === value.title}
           noOptionsText={t('not-found')}
@@ -96,9 +96,9 @@ const ComboBox = (props: IComboBox) => {
           // dir='ltr'
           disablePortal
           id={id}
-          className='bdm-custom-mui-autocomplete__input'
+          className="bdm-custom-mui-autocomplete__input"
           ListboxProps={{ style: { overflow: 'hidden' } }}
-          getOptionLabel={opt => (dictionary ? window?.[dictionary]?.[opt] || opt : opt)}
+          getOptionLabel={(opt) => opt}
           value={plainValue}
           onChange={onChange}
           options={plainOptions}
@@ -107,21 +107,21 @@ const ComboBox = (props: IComboBox) => {
           inputValue={inputValue}
           // open
           onInputChange={onInputChange}
-          renderInput={param => {
+          renderInput={(param) => {
             return (
               <TextField
-                className='bdm-custom-mui-autocomplete__input__input'
+                className="bdm-custom-mui-autocomplete__input__input"
                 {...param}
                 placeholder={t(placeholder)}
               />
-            )
+            );
           }}
           isOptionEqualToValue={(option, value) => option === value}
           noOptionsText={t('not-found')}
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ComboBox
+export default ComboBox;

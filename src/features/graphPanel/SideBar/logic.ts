@@ -116,7 +116,7 @@ const useSidebar = () => {
   };
 
   const onSave = async () => {
-    console.log('saved');
+    console.log('saved', imageBase64);
   };
 
   const handleReset = () => {

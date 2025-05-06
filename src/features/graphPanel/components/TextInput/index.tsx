@@ -1,25 +1,24 @@
-import './style.scss'
-import { t } from 'i18next'
-import { Trans } from 'react-i18next'
-import Tooltip from '@mui/material/Tooltip'
+import './style.scss';
+import { t } from 'i18next';
+import Tooltip from '@mui/material/Tooltip';
 
 interface IBDMFilterTextInput {
-  id?: string
-  value?: number | string
-  type?: 'text' | 'number'
-  onChange?: any
-  placeholder?: string
-  label?: string
-  className?: string
-  autoComplete?: string
-  disabled?: boolean
-  onBlur?: (value: string) => void
-  tooltip?: string
-  required?: boolean
-  min?: string
-  max?: string
-  step?: string
-  dir?: string
+  id?: string;
+  value?: number | string;
+  type?: 'text' | 'number';
+  onChange?: any;
+  placeholder?: string;
+  label?: string;
+  className?: string;
+  autoComplete?: string;
+  disabled?: boolean;
+  onBlur?: (value: string) => void;
+  tooltip?: string;
+  required?: boolean;
+  min?: string;
+  max?: string;
+  step?: string;
+  dir?: string;
 }
 
 const TextInput = (props: IBDMFilterTextInput) => {
@@ -41,14 +40,16 @@ const TextInput = (props: IBDMFilterTextInput) => {
     onBlur,
     disabled,
     ...rest
-  } = props
+  } = props;
 
   return (
-    <div className={`bdm-filter-text-input ${className ? className : ''}`.trim()}>
+    <div
+      className={`bdm-filter-text-input ${className ? className : ''}`.trim()}
+    >
       {label && (
         <Tooltip title={tooltip ?? ''}>
-          <label htmlFor={id} className='bdm-filter-text-input__label'>
-            <Trans i18nKey={label} />
+          <label htmlFor={id} className="bdm-filter-text-input__label">
+            {t(label)}
           </label>
         </Tooltip>
       )}
@@ -61,16 +62,18 @@ const TextInput = (props: IBDMFilterTextInput) => {
         onChange={onChange}
         placeholder={t(placeholder ?? '')}
         autoComplete={autoComplete}
-        className={`bdm-filter-text-input__input ${disabled ? ' input-disabled' : ''}`.trim()}
+        className={`bdm-filter-text-input__input ${
+          disabled ? ' input-disabled' : ''
+        }`.trim()}
         disabled={disabled}
         required={required}
-        onBlur={value => onBlur?.(value.target.value)}
+        onBlur={(value) => onBlur?.(value.target.value)}
         min={min}
         max={max}
         step={step}
       />
     </div>
-  )
-}
+  );
+};
 
-export default TextInput
+export default TextInput;

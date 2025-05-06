@@ -48,7 +48,7 @@ const MetaDataBox = ({
       />
       <Button
         className="bdm-graph-sidebar__body__section__submit"
-        title={t<string>('save')}
+        title={t('save')}
         disabled={!fieldName || !fieldType}
         onClick={onAddMetaData}
         type="button"

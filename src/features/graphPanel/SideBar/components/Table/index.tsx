@@ -20,7 +20,7 @@ interface ICumulativeFilterTableProps {
 }
 
 const translatedMetaData = (title: string) => {
-  return window?.meta_data_dictionary?.[title] || title;
+  return title;
 };
 
 const CumulativeFilterTable = (props: ICumulativeFilterTableProps) => {

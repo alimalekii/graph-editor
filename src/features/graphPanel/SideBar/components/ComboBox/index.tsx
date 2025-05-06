@@ -42,7 +42,6 @@ const ComboBox = (props: IComboBox) => {
     placeholder,
     label,
     className,
-    dictionary,
     style,
   } = props;
 
@@ -64,7 +63,7 @@ const ComboBox = (props: IComboBox) => {
           ListboxProps={{ style: { overflow: 'hidden' } }}
           getOptionLabel={(opt) => {
             const title = typeof opt === 'string' ? opt : opt.title;
-            return dictionary ? window?.[dictionary]?.[title] || title : title;
+            return title;
           }}
           value={value}
           onChange={onChange}
