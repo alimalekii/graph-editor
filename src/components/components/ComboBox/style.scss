@@ -1,0 +1,143 @@
+@import 'src/theme/theme.scss';
+
+.bdm-custom-mui-autocomplete {
+  &__label {
+    color: $blue-filter-header-title;
+    min-width: 30px;
+    color: #3e5da0;
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__input {
+    border: none !important;
+    border-radius: 5px;
+    background: $input-box-background;
+    overflow: hidden;
+    outline: none;
+    height: 24px;
+
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+
+    &:focus {
+      outline: none !important;
+      border: none !important;
+    }
+  }
+
+  &__input__input {
+    text-align: center;
+    height: 24px;
+
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  // .MuiAutocomplete-input {
+  //   z-index: 2;
+  // }
+
+  .MuiPaper-elevation {
+    max-height: 200px !important;
+  }
+
+  .MuiAutocomplete-popper {
+    .MuiPaper-root {
+      height: 200px !important ;
+      font-size: 14px;
+      background-color: white !important;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #accefd;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #3271ff;
+        border-radius: 100px;
+        border: 3px solid #3271ff;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border: none !important;
+    height: 24px;
+    top: 0px !important;
+  }
+
+  .MuiAutocomplete-clearIndicator {
+    display: none;
+  }
+
+  .MuiInputBase-root {
+    min-height: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px !important;
+    border-radius: 8px;
+  }
+
+  .MuiAutocomplete-endAdornment {
+    z-index: 2;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+
+    .MuiButtonBase-root {
+      padding: unset !important;
+      border-radius: unset !important;
+      color: unset !important;
+      &:hover,
+      &:active {
+        background-color: unset !important;
+      }
+    }
+  }
+  .MuiSwitch-switchBase {
+    padding: 9px !important;
+  }
+
+  .MuiAutocomplete-input {
+    z-index: 2;
+    padding: 0px !important;
+    padding-right: 26px !important;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Sahel;
+    height: 24px !important;
+  }
+
+  .MuiInputBase-root {
+    height: 24px !important;
+  }
+  .MuiButtonBase-root {
+    padding: 0;
+    min-height: unset !important;
+    border-radius: 6px 6px 0 0 !important;
+  }
+  .MuiAutocomplete-option {
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+  }
+}

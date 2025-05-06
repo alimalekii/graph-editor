@@ -1,0 +1,131 @@
+@import '../../theme/theme.scss';
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  // max-height: calc(100vh - 67px);
+  margin-top: auto;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    animation: text-fade 3s ease-in-out infinite;
+    border-radius: 8px;
+    margin-top: 12px;
+    background-color: $white;
+
+    overflow: hidden;
+
+    &__filled {
+      position: absolute;
+      z-index: 2;
+      background-color: #3271ff;
+      height: 100%;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    &__text {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      min-width: 500px;
+      text-align: center;
+      color: $black;
+      font-weight: bold;
+      text-shadow: 6px 6px 24px $white;
+      cursor: default;
+      background-color: unset !important;
+      border-radius: 8px;
+    }
+  }
+
+  .stop-btn {
+    max-width: 150px;
+    min-width: unset;
+    margin-top: 16px;
+  }
+
+  &-shape {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    width: 62px;
+    height: 62px;
+    margin-bottom: 24px;
+
+    &.revert-anim {
+      @for $i from 0 through 11 {
+        .loading-shape__box:nth-of-type(#{$i}) {
+          .loading-shape__circle {
+            animation: makeInvisible 100ms ease-in-out $i * 100ms forwards;
+          }
+        }
+      }
+      .loading-shape__circle {
+        background-color: #3271ff;
+      }
+    }
+
+    &__circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background-color: #cacaca;
+      position: absolute;
+    }
+
+    &__box {
+      position: absolute;
+      min-width: 60px;
+      min-height: 60px;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    @for $i from 0 through 11 {
+      .loading-shape__box:nth-of-type(#{$i}) {
+        transform: rotate($i * 30deg);
+        .loading-shape__circle {
+          animation: makeVisible 100ms ease-in-out $i * 100ms forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes makeVisible {
+  from {
+    background-color: #cacaca;
+  }
+
+  to {
+    background-color: #3271ff;
+  }
+}
+
+@keyframes makeInvisible {
+  from {
+    background-color: #3271ff;
+  }
+
+  to {
+    background-color: #cacaca;
+  }
+}

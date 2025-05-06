@@ -1,0 +1,104 @@
+@import 'src/theme/theme.scss';
+
+.bdm-fitler-table {
+  width: 100%;
+  max-height: 150px !important;
+  border-radius: 5px !important;
+  background-color: $white;
+  overflow: auto !important;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #accefd;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #3271ff;
+    border-radius: 100px;
+    border: 3px solid #3271ff;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &__head {
+    width: 100%;
+    height: 20px;
+    overflow: hidden !important;
+
+    border-radius: 4px 4px 0px 0px;
+    background: $white-blue-2;
+
+    &__row {
+      width: 100%;
+      height: 100%;
+
+      &__cell {
+        color: $blue-title !important;
+        font-family: Sahel, Kalameh !important;
+        font-size: 12px !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        line-height: normal !important;
+        padding: 4px !important;
+        background-color: $white-blue-2 !important;
+
+        &.delete {
+          width: 14px !important;
+        }
+      }
+    }
+  }
+  &__body {
+    width: 100%;
+    min-height: 100px;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 0px 0px 4px 4px;
+
+    &__row {
+      height: 14px !important;
+      width: 100% !important;
+      border-bottom: 1px solid $blue-filter-body;
+
+      &:hover {
+        background-color: $input-box-background;
+        cursor: pointer;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &__cell {
+        border-left: 2px solid $white-blue;
+        width: 63px !important;
+        height: 14px !important;
+        max-width: 63px !important;
+        max-height: 14px !important;
+        border-bottom: 2px solid $blue-filter-body;
+
+        color: $black-light-1 !important;
+        font-family: Sahel, Kalameh !important;
+        font-size: 9px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: normal !important;
+        padding: 2px !important;
+
+        &:last-child {
+          border-left: none;
+        }
+
+        &.delete {
+          width: 14px !important;
+          padding: 4px !important;
+        }
+      }
+    }
+  }
+}

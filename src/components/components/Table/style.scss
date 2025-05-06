@@ -1,0 +1,111 @@
+@import 'src/theme/theme.scss';
+
+.bdm-table {
+  width: 100%;
+  height: 204px !important;
+  border-radius: 6px !important;
+  background-color: #efefef;
+  overflow: auto !important;
+  direction: rtl;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #accefd;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #3271ff;
+    border-radius: 100px;
+    border: 3px solid #3271ff;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &__head {
+    width: 100%;
+    height: 20px;
+    overflow: hidden !important;
+
+    border-radius: 6px 6px 0px 0px;
+    background: #c3dbff;
+
+    &__row {
+      width: 100%;
+      height: 100%;
+
+      &__cell {
+        color: #3e5da0 !important;
+        font-family: Sahel, Kalameh !important;
+        font-size: 12px !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        line-height: normal !important;
+        padding: 4px !important;
+        background-color: #c3dbff !important;
+
+        &.delete {
+          width: 14px !important;
+        }
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    min-height: 100px;
+    max-height: 184px;
+    overflow-y: auto;
+    border-radius: 0px 0px 6px 6px;
+    background-color: #efefef;
+    padding: 4px;
+
+    &__row {
+      height: 24px !important;
+      width: 100%;
+      border: none;
+      background-color: #fefefe;
+      cursor: pointer;
+      border-radius: 3px !important;
+      border: 4px solid #efefef;
+
+      &:hover {
+        background-color: $input-box-background;
+      }
+
+      &__cell {
+        height: 100% !important;
+        width: 100px !important;
+
+        color: $black-light-1 !important;
+        font-family: Sahel, Kalameh !important;
+        font-size: 9px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: normal !important;
+        padding: 2px !important;
+
+        &:first-child {
+          border-radius: 0 3px 3px 0;
+        }
+
+        &:last-child {
+          border-radius: 3px 0 0 3px;
+        }
+
+        &.delete {
+          width: 14px !important;
+          padding: 4px !important;
+        }
+      }
+
+      &.error {
+        background-color: $red;
+      }
+    }
+  }
+}

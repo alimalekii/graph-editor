@@ -1,0 +1,155 @@
+.bdm-graph-setting-combo {
+  width: 315px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__label {
+    color: #353a5f;
+    background-color: #eee;
+    width: 115px;
+    height: 100%;
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 12px;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    background-color: #e3e3e3;
+    color: #353a5f;
+    border: none !important;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+    outline: none;
+    height: 32px;
+    width: 200px !important;
+
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+
+    &:focus {
+      outline: none !important;
+      border: none !important;
+    }
+  }
+
+  &__input__input {
+    text-align: center;
+    height: 32px;
+
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .MuiAutocomplete-input {
+    z-index: 2;
+  }
+
+  .MuiPaper-elevation {
+    max-height: 200px !important;
+  }
+
+  .MuiAutocomplete-popper {
+    .MuiPaper-root {
+      height: 200px !important ;
+      font-size: 14px;
+      background-color: white !important;
+
+      &::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #accefd;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #3271ff;
+        border-radius: 100px;
+        border: 3px solid #3271ff;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border: none !important;
+    height: 32px;
+    top: 0px !important;
+  }
+
+  .MuiAutocomplete-clearIndicator {
+    display: none;
+  }
+
+  .MuiInputBase-root {
+    min-height: 24px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px !important;
+    border-radius: 8px;
+  }
+
+  .MuiAutocomplete-endAdornment {
+    z-index: 2;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+
+    .MuiButtonBase-root {
+      padding: unset !important;
+      border-radius: unset !important;
+      color: unset !important;
+      &:hover,
+      &:active {
+        background-color: unset !important;
+      }
+    }
+  }
+  .MuiSwitch-switchBase {
+    padding: 9px !important;
+  }
+  .MuiAutocomplete-input {
+    padding-right: 26px !important;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Sahel;
+    // height: 32px !important;
+  }
+
+  .MuiInputBase-root {
+    height: 32px !important;
+  }
+  .MuiButtonBase-root {
+    padding: 0;
+    min-height: unset !important;
+    border-radius: 6px 6px 0 0 !important;
+  }
+  .MuiAutocomplete-option {
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+  }
+}

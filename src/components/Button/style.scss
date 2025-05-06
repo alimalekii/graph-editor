@@ -1,0 +1,55 @@
+.bdm-btn {
+  position: relative;
+  height: 46px;
+  width: 100%;
+  background-color: #3271ff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  min-width: 80px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: Sahel !important;
+
+  &:hover {
+    .bdm-btn__hover {
+      position: absolute;
+      z-index: 1;
+      width: 200%;
+      top: -250%;
+      left: -40%;
+      aspect-ratio: 1 / 1;
+      background-color: #6090ff;
+      opacity: 0.4;
+      border-radius: 100%;
+      animation: onHoverBg 0.4s ease-out;
+    }
+  }
+
+  &__disabled {
+    background-color: #d0d0d0;
+    cursor: not-allowed;
+
+    &:hover {
+      .bdm-btn__hover {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes onHoverBg {
+  0% {
+    width: 0%;
+    left: 50%;
+    top: 20px;
+  }
+
+  100% {
+    width: 150%;
+    left: -20%;
+    top: -200%;
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../theme/theme.scss';
+
+.not-allowed-container {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background: url('../../assets/bg403.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__back-btn {
+    position: fixed;
+    bottom: 170px;
+    left: calc(50vw - 200px);
+    width: 400px;
+    min-width: unset;
+    height: 46px;
+    background-color: #fff;
+    color: #D80000;
+    border: 2px solid #D80000;
+    font-size: 20px;
+    font-weight: 700;
+
+    &:hover {
+      .bdm-btn__hover {
+        background-color: #FFE3E3;
+      }
+    }
+  }
+}

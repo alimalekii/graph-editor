@@ -1,0 +1,42 @@
+div[data-valid='unvalid'] {
+  .react-flow__edge .react-flow__edge-path {
+    stroke-width: 1px;
+    stroke: red;
+  }
+
+  .react-flow__edge.selected .react-flow__edge-path {
+    stroke-width: 2px !important;
+    stroke: red !important;
+    // stroke: #b1b1b7 !important;
+  }
+}
+
+.bdm-graph-edge-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  //   width: 120px;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding: 6px 9px;
+
+  background-color: #d9d9d9;
+  color: #000;
+  border-radius: 9px;
+  border: 4px solid #eee;
+}
+
+.react-flow__edge .react-flow__edge-path {
+  stroke-width: 1px;
+  stroke: #3271ff;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke-width: 2px !important;
+  stroke: #3271ff !important;
+  // stroke: #b1b1b7 !important;
+}

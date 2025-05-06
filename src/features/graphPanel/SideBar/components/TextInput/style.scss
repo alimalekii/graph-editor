@@ -1,0 +1,73 @@
+.bdm-graph-setting-text-input {
+  width: 315px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__label {
+    color: #353a5f;
+    background-color: #eee;
+    width: 115px;
+    height: 100%;
+    font-family: Sahel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 12px;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    background-color: #e3e3e3;
+    color: #353a5f;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    overflow: hidden;
+    outline: none;
+    height: 32px;
+    width: 200px;
+    padding: 12px;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.4);
+      padding-right: 12px;
+    }
+
+    &.input-disabled {
+      cursor: not-allowed;
+    }
+
+    &.input-required {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 1px;
+        left: -7px;
+        content: '*';
+        color: #ff4545;
+        font-size: 14px;
+      }
+    }
+  }
+
+  $root-elem: &;
+  &.error {
+    #{$root-elem}__input {
+      color: red;
+    }
+  }
+}

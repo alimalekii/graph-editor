@@ -1,0 +1,115 @@
+.bdm-graph-sidebar {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+
+  &__header {
+    background-color: #c3dbff;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 32px;
+    padding: 2px 4px;
+    box-sizing: border-box;
+
+    &__close {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 2px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__header {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 120px;
+      padding: 2px 4px;
+      box-sizing: border-box;
+
+      &__title {
+        color: #000 !important;
+        font-size: 14px;
+      }
+
+      &__sort {
+        width: 20px;
+        height: 15px;
+      }
+    }
+    &__seprator {
+      width: calc(100% - 10px);
+      height: 28px;
+      background-color: #c3dbff;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px;
+
+      p {
+        font-size: 12px;
+        font-weight: 500;
+        color: #000;
+      }
+    }
+    &__section {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      &__submit {
+        min-width: unset;
+        width: 100px;
+        height: 30px;
+        font-size: 14px;
+        background-color: #c3dbff;
+        color: #3e5da0;
+
+        &.bdm-btn__disabled {
+          background-color: #d0d0d0;
+          cursor: not-allowed;
+
+          &:hover {
+            .bdm-btn__hover {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__submit {
+      min-width: unset;
+      width: 132px;
+      height: 30px;
+      font-size: 14px;
+    }
+  }
+}

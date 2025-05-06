@@ -1,0 +1,123 @@
+@import '/src/theme/theme.scss';
+
+.bdm-notif-card {
+  box-sizing: border-box;
+  width: 449px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(238, 238, 238, 0.93);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $white-4;
+  }
+
+  &:active {
+    background-color: $white-3;
+  }
+
+  &.read {
+    p {
+      color: $black-light-2 !important;
+    }
+  }
+
+  &__badge {
+    width: 3px;
+    height: 100%;
+
+    &.error {
+      background-color: rgba(231, 20, 20, 0.93);
+      &.read {
+        background-color: rgba(231, 20, 20, 0.3);
+      }
+    }
+
+    &.alert {
+      background-color: rgba(231, 20, 20, 0.93);
+      &.read {
+        background-color: rgba(231, 20, 20, 0.3);
+      }
+    }
+
+    &.warning {
+      background-color: rgba(255, 187, 14, 0.93);
+      &.read {
+        background-color: rgba(255, 187, 14, 0.3);
+      }
+    }
+
+    &.info {
+      background-color: rgba(14, 183, 255, 0.93);
+      &.read {
+        background-color: rgba(14, 183, 255, 0.3);
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__msg {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        color: #444;
+        text-align: right;
+        font-family: Sahel;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &__description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #444;
+        text-align: right;
+        font-family: Sahel;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 322px;
+      }
+    }
+
+    &__time {
+      width: 84px;
+      color: #444;
+      font-family: inherit;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}
